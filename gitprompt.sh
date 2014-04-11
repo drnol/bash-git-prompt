@@ -44,6 +44,18 @@ function git_prompt_config()
   local Blue="\[\033[0;34m\]"
   local Cyan="\[\033[0;36m\]"
   
+  
+  B='\[\e[1;38;5;33m\]'
+  LB='\[\e[1;38;5;81m\]'
+  GY='\[\e[1;38;5;242m\]'
+  G='\[\e[1;38;5;82m\]'
+  P='\[\e[1;38;5;161m\]'
+  PP='\[\e[1;38;5;93m\]'
+  R='\[\e[1;38;5;196m\]'
+  Y='\[\e[1;38;5;214m\]'
+  W='\[\e[0m\]'
+  NC='\e[0m'
+  
   #Checking if root to change output
   _isroot=false
   [[ $UID -eq 0 ]] && _isroot=true
@@ -95,28 +107,29 @@ function git_prompt_config()
   local PathShort="\w"
 
   if [ "x${GIT_PROMPT_START}" == "x" ]; then
-    #First statment is for non root behavior second for root
+    #First statment is for non root behavior second for root #PROMPT_START="${Yellow}${PathShort}${ResetColor}"
     if ! $_isroot; then
-      PROMPT_START="${Yellow}${PathShort}${ResetColor}"
+      PROMPT_START="$GY[$Y\u$GY@$P\h$W:$B\W$GY]"
     else
-      PROMPT_START="${Yellow}${PathShort}${ResetColor}"
+      PROMPT_START="$GY[$R\u$GY@$P\h$W:$B\W$GY]"
     fi
   else
     PROMPT_START="${GIT_PROMPT_START}"
   fi
 
   if [ "x${GIT_PROMPT_END}" == "x" ]; then
-    #First statment is for non root behavior second for root
+    #First statment is for non root behavior second for root #PROMPT_END=" \n${White}${Time12a}${ResetColor} $W\$ "
     if ! $_isroot; then
-      PROMPT_END=" \n${White}${Time12a}${ResetColor} $ "
+      PROMPT_END="$W\$ "
     else
-      PROMPT_END=" \n${White}${Time12a}${ResetColor} # "
+      PROMPT_END="$W# "
     fi
   else
     PROMPT_END="${GIT_PROMPT_END}"
   fi
 
   # set GIT_PROMPT_LEADING_SPACE to 0 if you want to have no leading space in front of the GIT prompt
+  GIT_PROMPT_LEADING_SPACE=0
   if [ "x${GIT_PROMPT_LEADING_SPACE}" == "x0" ]; then
     PROMPT_LEADING_SPACE=""
   else
