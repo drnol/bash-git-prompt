@@ -11,6 +11,11 @@ staged, changed, etc.
 
 `gitstatus.sh` added by [AKS](http://github.com/aks).
 
+---
+
+This prompt is a variant of 'https://github.com/magicmonty/bash-git-prompt.git'.
+This prompt will work well with ubuntu's original gnome-term & bash.
+
 ## Examples
 
 The prompt may look like the following: 
@@ -50,16 +55,11 @@ The symbols are as follows:
 ## Install
 
 - Clone this repository to your homedir
-   e.g. ``git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt``
+   e.g. ``git clone https://github.com/drnol/bash-git-prompt.git .bash-git-prompt``
 - Source the file ``gitprompt.sh`` from your ``~/.bashrc`` config file:
 
 ```sh
    # some other config in .bashrc
-
-   # gitprompt configuration
-
-   # Set config variables first
-   GIT_PROMPT_ONLY_IN_REPO=1
 
    # as last entry source the gitprompt script
    source ~/.bash-git-prompt/gitprompt.sh
