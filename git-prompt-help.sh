@@ -12,18 +12,18 @@ hash prefixed with ':'.
 TRACKING indicates how the local branch differs from the
 remote branch.  It can be empty, or one of:
 
-    ${GIT_PROMPT_BRANCH}${ResetColor}${GIT_PROMPT_REMOTE}↑·N${ResetColor}   - ahead of remote by N commits
-    ${GIT_PROMPT_BRANCH}${ResetColor}${GIT_PROMPT_REMOTE}↓·N${ResetColor}   - behind remote by N commits
-    ${GIT_PROMPT_BRANCH}${ResetColor}${GIT_PROMPT_REMOTE}↓·M↑·N${ResetColor} - branches diverged, other by M commits, yours by N commits
+    ${GIT_PROMPT_BRANCH}${ResetColor}${GIT_PROMPT_REMOTE}↑·N${ResetColor}	- ahead of remote by N commits
+    ${GIT_PROMPT_BRANCH}${ResetColor}${GIT_PROMPT_REMOTE}↓·N${ResetColor}	- behind remote by N commits
+    ${GIT_PROMPT_BRANCH}${ResetColor}${GIT_PROMPT_REMOTE}↓·M↑·N${ResetColor}	- branches diverged, other by M commits, yours by N commits
 
 LOCALSTATUS is one of the following:
 
-    ${GIT_PROMPT_CLEAN}${ResetColor}   - repository clean
-    ${GIT_PROMPT_STAGED}N${ResetColor}  - N staged files
-    ${GIT_PROMPT_CONFLICTS}N${ResetColor}  - N conflicted files
-    ${GIT_PROMPT_CHANGED}N${ResetColor}  - N changed but *unstaged* files
-    ${GIT_PROMPT_UNTRACKED}N${ResetColor}  - N untracked files
-    ${GIT_PROMPT_STASHED}N${ResetColor}  - N stash entries
+    ${GIT_PROMPT_CLEAN}${ResetColor}	- repository clean
+    ${GIT_PROMPT_STAGED}N${ResetColor}	- N staged files
+    ${GIT_PROMPT_CONFLICTS}N${ResetColor}	- N conflicted files
+    ${GIT_PROMPT_CHANGED}N${ResetColor}	- N changed but *unstaged* files
+    ${GIT_PROMPT_UNTRACKED}N${ResetColor}	- N untracked files
+    ${GIT_PROMPT_STASHED}N${ResetColor}	- N stash entries
 
 See "git_prompt_examples" for examples.
 EOF
