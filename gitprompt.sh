@@ -38,8 +38,9 @@ function git_prompt_config()
   local Magenta="\[\033[1;95m\]"      # Purple
 
   # Regular Colors
+  local LCyan="\[\033[0;96m\]"
   local Yellow="\[\033[0;33m\]"
-  local White='\[\033[37m\]'
+  local White='\[\033[00m\]'
   local Red="\[\033[0;31m\]"
   local Blue="\[\033[0;34m\]"
   local Cyan="\[\033[0;36m\]"
@@ -103,12 +104,12 @@ function git_prompt_config()
   if [ "x${GIT_PROMPT_START}" == "x" ]; then
     #First statment is for non root behavior second for root
     if $_isroot; then
-      PROMPT_START="${GIT_PROMPT_START_ROOT}"
+      PROMPT_START="${PS2}${GIT_PROMPT_START_ROOT}"
     else
-      PROMPT_START="${GIT_PROMPT_START_USER}"
+      PROMPT_START="${PS2}${GIT_PROMPT_START_USER}"
     fi
   else
-    PROMPT_START="${GIT_PROMPT_START}"
+    PROMPT_START="${PS2}${GIT_PROMPT_START}"
   fi
 
   if [ "x${GIT_PROMPT_END}" == "x" ]; then
@@ -278,6 +279,9 @@ function prompt_callback_default {
 }
 
 function run {
+  git_prompt_dir
+  source "$__GIT_PROMPT_DIR/ubuntu-term.sh"
+
   if [ "`type -t prompt_callback`" = 'function' ]; then
       prompt_callback="prompt_callback"
   else
@@ -306,7 +310,6 @@ function run {
     esac
   fi
 
-  git_prompt_dir
   source "$__GIT_PROMPT_DIR/git-prompt-help.sh"
 }
 
