@@ -1,6 +1,12 @@
 # These are the color definitions used by gitprompt.sh
 
 define_git_prompt_colors() {
+  local LCyan="\[\033[0;96m\]"
+  local White='\[\033[00m\]'
+  local BoldGreen="\[\033[1;32m\]"    # Green
+  local BoldBlue="\[\033[1;34m\]"     # Blue
+  local Yellow="\[\033[0;33m\]"
+
   Time12a="\$(date +%H:%M)"
   PathShort="\w"
 
@@ -9,13 +15,13 @@ define_git_prompt_colors() {
   GIT_PROMPT_SUFFIX="]"                 # the end of the git info string
   GIT_PROMPT_SEPARATOR="|"              # separates each item
 
-GIT_PROMPT_BRANCH="${LCyan}"        # the git branch that is active in the current directory
+  GIT_PROMPT_BRANCH="${LCyan}"        # the git branch that is active in the current directory
   GIT_PROMPT_STAGED="${Red}●"           # the number of staged files/directories
   GIT_PROMPT_CONFLICTS="${Red}✖ "       # the number of files in conflict
   GIT_PROMPT_CHANGED="${Blue}✚ "        # the number of changed files
 
   GIT_PROMPT_REMOTE=" "                 # the remote branch name (if any) and the symbols for ahead and behind
-GIT_PROMPT_UNTRACKED="${Magenta}…"       # the number of untracked files/dirs
+  GIT_PROMPT_UNTRACKED="${Magenta}…"       # the number of untracked files/dirs
   GIT_PROMPT_STASHED="${BoldBlue}⚑ "    # the number of stashed files/dir
   GIT_PROMPT_CLEAN="${BoldGreen}✔"      # a colored flag indicating a "clean" repo
 

@@ -61,25 +61,17 @@ The symbols are as follows:
 
 ## Install
 
-<<<<<<< HEAD
-- Clone this repository to your homedir
-   e.g. ``git clone https://github.com/drnol/bash-git-prompt.git .bash-git-prompt``
-- Source the file ``gitprompt.sh`` from your ``~/.bashrc`` config file:
-=======
 1. Clone this repository to your home directory.
-
-    git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+   e.g. ``git clone https://github.com/drnol/bash-git-prompt.git .bash-git-prompt``
 
 2. Source the file `gitprompt.sh` from `~/.bashrc`
+- Source the file ``gitprompt.sh`` from your ``~/.bashrc`` config file:
 
 3. `cd` to a git repository and test it!
->>>>>>> magicmonty
 
 ```sh
    # some other config in .bashrc
 
-<<<<<<< HEAD
-=======
    # gitprompt configuration
 
    # Set config variables first
@@ -90,7 +82,6 @@ The symbols are as follows:
    # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
    # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
 
->>>>>>> magicmonty
    # as last entry source the gitprompt script
    source ~/.bash-git-prompt/gitprompt.sh
 ```
